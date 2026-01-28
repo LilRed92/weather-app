@@ -10,11 +10,11 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-let urlencodedParser = bodyParser.urlencoded({ extended: false });
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.use('/api', router);
 
-app.get('/', (req, res) => res.json({ message: 'Hello from the server!' });
+app.get('/', (req, res) => res.json({ message: 'Hello from the server!' }));
 
 
-app.listen(PORT, () => console.log(`Server is running at: http://localhost:${PORT}`);
+app.listen(PORT, () => console.log(`Server is running at: http://localhost:${PORT}`));
