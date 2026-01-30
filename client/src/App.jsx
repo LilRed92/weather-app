@@ -1,4 +1,4 @@
-import { useState,useEffect } from 'react';
+import { useState } from 'react';
 import WeatherForm from './components/WeatherForm.jsx';
 import './App.css';
 
