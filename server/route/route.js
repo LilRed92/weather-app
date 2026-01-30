@@ -9,6 +9,6 @@ router.get('/', (req, res) => {
 
 router.get('/results', getWeatherData);
 
-router.get('/icon', getIconData);
+//router.get('/icon', getIconData);
 
 export default router;

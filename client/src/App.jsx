@@ -1,6 +1,6 @@
 <script src="http://localhost:8097"></script>
 import { useState } from 'react';
-import reactDom from 'react-dom';
+//import reactDom from 'react-dom';
 import WeatherForm from './components/WeatherForm.jsx';
 import WeatherCard from './components/WeatherCard.jsx';
 import './App.css';
