@@ -10,19 +10,32 @@ function App() {
 
   
 
-  const fetchData = async () => {
-    const response = await axios.get('http://localhost:3000/api/results');
-    setResult(response.data);
-  }
+  // const fetchData = async () => {
+  //   const response = await axios.get('http://localhost:3000/api/results');
+  //   setResult(response.data);
+  // }
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // useEffect(() => {
+  //   axios.get('http://localhost:3000/api/results')
+  //     .then(res => {
+  //       if (!res.ok) throw new Error('Network response was not ok');
+  //       return res;
+  //     })
+  //     .then(res => {
+  //       setResult(res.data);
+  //       console.log(res.data);
+  //     })
+  //     .catch(err => console.error('Fetch error:', err));
+  // });
 
   return (
     <>
-      <WeatherForm city={city} handleSubmit={handleSubmit} />
-      {!is}
+      {/* <WeatherForm city={city} handleSubmit={handleSubmit} />
+      {!is} */}
     </>
   )
 }

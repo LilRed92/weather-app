@@ -3,12 +3,13 @@ dotenv.config();
 
 export const getWeatherData = (req, res) => {
     console.log("test 1");  
-    // const city = req.query.cityName;
+    const city = req.query.cityName;
     const apiKey = process.env.VITE_WEATHER_API_KEY;
+    console.log(apiKey);
     const params = new URLSearchParams({
-    //     q: req.cityName,
+        q: req.cityName,
         appid: apiKey,
-    //     units: 'imperial'
+        units: 'imperial',
     });
 
     const url = `https://pro.openweathermap.org/data/2.5/weather?${params}`;
@@ -20,6 +21,7 @@ export const getWeatherData = (req, res) => {
         })
         .catch((err) => {
             console.error('Error fetching weather data:', err);
+            res.status(500).json({ message: 'Internal Server Error', detail: err.message });
         });
     };
 
