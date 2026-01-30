@@ -10,6 +10,7 @@ export const getWeatherData = (req, res) => {
         units: 'imperial',
     });
 
+    const imgUrl = https://openweathermap.org/payload/api/media/file/10d@2x.png
     const url = `https://pro.openweathermap.org/data/2.5/weather?${params}`;
     fetch(url)
         .then((res) => res.json())
@@ -21,6 +22,5 @@ export const getWeatherData = (req, res) => {
             res.status(500).json({ message: 'Internal Server Error', detail: err.message });
         });
     };
-
 
 

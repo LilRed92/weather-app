@@ -1,24 +1,29 @@
+<script src="http://localhost:8097"></script>
+import ReactDom from 'react-dom';
 import React, { useState } from 'react';
 
-function WeatherForm({ onDataReceived }) {
-    const [city, setCity] = useState("");
-    const [results, setResults] = useState(null);
+function WeatherForm({ onDataReceived, onCityReceived }) {
+    const [city, setCity] = useState([]);
+    //const [results, setResults] = useState([]);
 
-    
     const fetchData = async () => {
-        try {
-            const params = new URLSearchParams({ cityName: city });
-            const response = await fetch(`http://localhost:3000/api/results?${params}`);
-            const data = await response.json();
-            setResults(data);
-            console.log(data);
+      try {
+          const params = new URLSearchParams({ cityName: city });
+          const response = await fetch(`http://localhost:3000/api/results?${params}`);
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          };
+          const data = await response.json();
 
-            onDataReceived(results)
+          onDataReceived(data);
+          onCityReceived(city);
 
-        } catch (err) {
-            console.error('Fetch error:', err);
-        }
-  };
+      } catch (err) {
+          console.error('Fetch error:', err);
+      }
+    };
+
+         
 
   const handleInputChange = (event) => {
     // capture and handle city input value

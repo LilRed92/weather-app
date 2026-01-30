@@ -1,19 +1,20 @@
-function WeatherCard({ weatherData }) {
+
+
+function WeatherCard({ weatherResults, city }) {
+
+    console.log(weatherResults);
+    const mainWeather = `${weatherResults.data.weather[0].main}`
+    const weatherIcon = `${weatherResults.data.weather[0].icon}`
 
     return (
         <div className="weather-card">
             <div className="results">
-                <h2>Here's the current weather in {weatherData.name}</h2>
-                //TODO:
-                // current weather icon
-                <p>Condition: {weatherData.weather.main}/p>
-                // temperature
-                <p>Temperature: {weatherData.main.temp}°</p>
-                <p>Description: {weatherData.weather[0].description}</p>
-                // humidity
-                <p>Humidity: {weatherData.main.humidity}%</p>
-                // wind speed
-                <p>Wind Speed: {weatherData.wind.speed} mph</p>
+                <h2>Here's the current weather in {city}</h2>
+                <p><img src={`https://openweathermap.org/payload/api/media/file/${weatherIcon}@2x.png`} alt="Weather Icon" /></p>
+                <p>Condition: {mainWeather}</p>
+                <p>Temperature: {weatherResults.data.main.temp}°</p>
+                <p>Humidity: {weatherResults.data.main.humidity}%</p>
+                <p>Wind Speed: {weatherResults.data.wind.speed} mph</p>
 
             </div>
         </div>

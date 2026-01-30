@@ -1,23 +1,31 @@
+<script src="http://localhost:8097"></script>
 import { useState } from 'react';
+import reactDom from 'react-dom';
 import WeatherForm from './components/WeatherForm.jsx';
+import WeatherCard from './components/WeatherCard.jsx';
 import './App.css';
 
 function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [results, setResults] = useState([null]);
+  const [results, setResults] = useState([]);
+  const [city, setCity] = useState([]);
 
   const handleChildData  = (results) => {
     setIsSubmitted(true);
     setResults(results);
   };
 
+  const handleChildCity = (city) => {
+    setCity(city);
+  }
+
   return (
     <div className="App">
       <h1>Weather App</h1>
       {!isSubmitted ? (
-        <WeatherForm onDataReceived={handleChildData} />
+        <WeatherForm onDataReceived={handleChildData} onCityReceived={handleChildCity} />
       ) : (
-        <WeatherCard weatherData={results} />
+        <WeatherCard weatherResults={results} city={city} />
       )} 
     </div>
   )
