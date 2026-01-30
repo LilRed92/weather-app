@@ -7,7 +7,7 @@ export const getWeatherData = (req, res) => {
     const apiKey = process.env.VITE_WEATHER_API_KEY;
     console.log(apiKey);
     const params = new URLSearchParams({
-        q: req.cityName,
+        q: city,
         appid: apiKey,
         units: 'imperial',
     });

@@ -4,40 +4,25 @@ import WeatherForm from './components/WeatherForm.jsx';
 import './App.css';
 
 function App() {
-  const [city, setCity] = useState([]);
-  const [isSubmitted, setIsSubmitted] = useState(null);
-  const [result, setResult] = useState([]);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [results, setResults] = useState([null]);
 
-  
-
-  // const fetchData = async () => {
-  //   const response = await axios.get('http://localhost:3000/api/results');
-  //   setResult(response.data);
-  // }
-
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-  // useEffect(() => {
-  //   axios.get('http://localhost:3000/api/results')
-  //     .then(res => {
-  //       if (!res.ok) throw new Error('Network response was not ok');
-  //       return res;
-  //     })
-  //     .then(res => {
-  //       setResult(res.data);
-  //       console.log(res.data);
-  //     })
-  //     .catch(err => console.error('Fetch error:', err));
-  // });
+  const handleChildData  = (results) => {
+    setIsSubmitted(true);
+    setResults(results);
+  };
 
   return (
-    <>
-      {/* <WeatherForm city={city} handleSubmit={handleSubmit} />
-      {!is} */}
-    </>
-  )
+    <div className="App">
+      <h1>Weather App</h1>
+      {!isSubmitted ? (
+        <WeatherForm onDataReceived={handleChildData} />
+      ) : (
+        <WeatherCard weatherData={results} />
+      )}
+      
+    </div>
+  );
 }
 
 export default App

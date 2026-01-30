@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 
-function WeatherForm(props) {
+function WeatherForm({ onDataReceived }) {
     const [city, setCity] = useState("");
-    const [weatherData, setWeatherData] = useState(null);
+    const [results, setResults] = useState(null);
 
+    
     const fetchData = async () => {
         try {
-        const response = await fetch('http://localhost:3000/api/results');
-        const data = await response.json();
-        setWeatherData(data);
-        console.log(data);
+            const params = new URLSearchParams({ cityName: city });
+            const response = await fetch(`http://localhost:3000/api/results?${params}`);
+            const data = await response.json();
+            setResults(data);
+            console.log(data);
+
+            onDataReceived(results)
 
         } catch (err) {
             console.error('Fetch error:', err);
@@ -25,6 +29,20 @@ function WeatherForm(props) {
     event.preventDefault();
     fetchData();
   };
+
+  return (
+    <>
+    <form onSubmit={handleSubmit}>
+        <input
+            type="text"
+            value={city}
+            onChange={handleInputChange}
+            placeholder="Enter city name"
+        />
+        <button type="submit">Get Weather</button>
+    </form>
+    </>
+  )
 }
 
 
