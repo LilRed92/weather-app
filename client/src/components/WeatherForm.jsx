@@ -1,5 +1,3 @@
-<script src="http://localhost:8097"></script>
-import ReactDom from 'react-dom';
 import React, { useState } from 'react';
 
 function WeatherForm({ onDataReceived, onCityReceived }) {
