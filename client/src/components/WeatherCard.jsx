@@ -1,5 +1,14 @@
-import React { useState } from 'react';
+import React, { useState } from 'react';
 
-function Results = 
+function WeatherCard({ weatherData }) {
 
-export default Results;
+    return (
+        <div className="weather-card">
+            <div className="results">
+                
+            </div>
+        </div>
+    )
+}
+
+export default WeatherCard;
