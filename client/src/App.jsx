@@ -18,10 +18,9 @@ function App() {
         <WeatherForm onDataReceived={handleChildData} />
       ) : (
         <WeatherCard weatherData={results} />
-      )}
-      
+      )} 
     </div>
-  );
+  )
 }
 
 export default App
