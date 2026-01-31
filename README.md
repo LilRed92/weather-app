@@ -14,12 +14,10 @@ A full-stack weather application that allows users to search for current weather
 
 ## 📸 Screenshots & Demos
 
-| Desktop Search | Mobile View |
+| Desktop | GIF |
 | :--- | :--- |
-| ![Desktop Screenshot](https://via.placeholder.com/600x350?text=Weather+App+Desktop) | ![Mobile Screenshot](https://via.placeholder.com/300x500?text=Weather+App+Mobile) |
+| ![Desktop Screenshot](https://www.awesomescreenshot.com/image/58577860?key=960705db7423834f72a83d2fbe54c257) | ![GIF](https://www.awesomescreenshot.com/image/58577878?key=82b0dcc6277221e8eac9a094033505c4) |
 
-> [!TIP]
-> *Add a GIF here showing the user typing a city and the weather card updating.*
 
 ## 🛠 Tech Stack
 
@@ -42,18 +40,19 @@ This project uses the OpenWeatherMap API. The backend acts as a proxy to forward
 
 ```
 http
-GET /api/weather
+GET /api/results
 ```
 
 ### External API Call (handled by backend)
 
 HTTP
-  [https://api.openweathermap.org/data/2.5/weather]
+  (https://api.openweathermap.org/data/2.5/weather)
 
 | Parameter | Type   | Description                              |
 |-----------|--------|------------------------------------------|
-| q         | string | **Required.** City name to search        |
-| appid     | string | **Required** Your OpenWeatherMap API key |
+| q         | ```string``` | **Required.** City name to search        |
+| appid     | ```string``` | **Required** Your OpenWeatherMap API key |
+| units     | ```string``` |  Measurements (metric : imperial)        |
 
 
 ## ⚙️ Environment Variables
@@ -67,7 +66,7 @@ To run this project, you will need to add the following environment variables to
 Clone the project & go to the project directory
 
 ```bash
-  git clone [https://github.com/yourusername/weather-app.git](https://github.com/yourusername/weather-app.git)
+  git clone (https://github.com/LilRed92/weather-app.git)
   cd weather-app
 ```
 ### Backend Setup
