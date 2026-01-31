@@ -15,10 +15,12 @@ A full-stack weather application that allows users to search for current weather
 ## 📸 Screenshots & Demos
 
 **Desktop**
+
 <img width="2880" height="1388" alt="client" src="https://github.com/user-attachments/assets/8a89d407-756b-43d5-9027-2955c18b772f" />
 
 **GIF**
-![client](https://github.com/user-attachments/assets/32649367-4c1e-4835-931e-61ec625ecbf7)
+
+![new-client](https://github.com/user-attachments/assets/3e7ea22e-dcb4-415a-a90e-13e0958809dc)
 
 
 
